@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import useDebounce from '../../hooks/useDebounce';
+import { FaSearch } from "react-icons/fa";
+import './SearchInputElements.css'
 
 function SearchInput({value, onChange}) {
     const [displayValue, setDisplayValue] = useState(value)
@@ -11,7 +13,19 @@ function SearchInput({value, onChange}) {
     }
 
   return(
-    <input className='input-search' type='search' value={displayValue} onChange={handleChange} />
+    <div className='search-container'>
+      <div className='search-content'>
+        <input 
+        className='input-search' 
+        type='search' 
+        value={displayValue} 
+        onChange={handleChange} 
+        placeholder="Busque por um anime"
+        />
+        <FaSearch />
+      </div>
+    </div>
+    
   );
 }
 
